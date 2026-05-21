@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeafSense | Monitoramento Remoto de Vegetação</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="header-brand">
+            <span class="header-icon">🌿</span>
+            <div>
+                <h1 class="header-title">LeafSense</h1>
+                <p class="header-subtitle">Monitoramento Remoto de Vegetação — São Paulo</p>
+            </div>
+        </div>
+        <div class="header-meta">
+            <span class="badge" id="status-badge">● Carregando…</span>
+            <span class="header-time" id="last-update">--:--</span>
+        </div>
+    </header>
+
+    <main class="app-layout">
+
+        <section class="map-section">
+            <div id="map"></div>
+            <div class="map-legend">
+                <span class="legend-dot low"></span>Baixo risco
+                <span class="legend-dot mid"></span>Moderado
+                <span class="legend-dot high"></span>Alto risco
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <!-- Stats summary row -->
+            <div class="stats-row" id="stats-row">
+                <div class="stat-box">
+                    <span class="stat-value" id="stat-avg-temp">—</span>
+                    <span class="stat-label">Temp. Média</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-value" id="stat-max-wind">—</span>
+                    <span class="stat-label">Vento Máx.</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-value" id="stat-high-risk">—</span>
+                    <span class="stat-label">Alto Risco</span>
+                </div>
+            </div>
+
+            <div class="sidebar-header">
+                <h2 class="sidebar-title">Pontos Monitorados</h2>
+                <span class="point-count" id="point-count">0 / 10</span>
+            </div>
+
+            <div class="point-list" id="point-list">
+                <div class="skeleton-list">
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- ── APP MODULES ── -->
+    <script type="module" src="js/locations.js"></script>
+    <script type="module" src="js/weather.js"></script>
+    <script type="module" src="js/map.js"></script>
+    <script type="module" src="js/dashboard.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
