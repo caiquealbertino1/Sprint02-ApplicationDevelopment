@@ -3,9 +3,6 @@ import { flyToLocation } from "./map.js";
 let loadedCount = 0;
 const TOTAL = 10;
 
-/**
- * Clears skeleton loaders and prepares the point list for real cards.
- */
 export function initDashboard() {
     const list = document.getElementById("point-list");
     list.innerHTML = "";
